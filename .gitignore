@@ -1,3 +1,10 @@
+# do not commit the large dataset
+datasets/
+*.ipynb
+
+# no apple ds store
+*.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
