@@ -31,7 +31,7 @@ Reconstruction from cluster IDs to Spectrogram
 Audio Output
     ↓
 Evaluation with Pitch/Onset extraction
-```'
+```
 
 # Dev Setup
 ```
@@ -44,6 +44,7 @@ brew install fluid-synth
 ## Project Structure
 
 You need to move the PPDD datasets under a folder called "datasets" in the root of your local repository. My file structure looks like this:
+
 ```
 ├── datasets
 │   ├── PPDD-Jul2018_aud_mono_small
