@@ -1,6 +1,5 @@
 # do not commit the large dataset
 datasets/
-*.ipynb
 
 # no apple ds store
 *.DS_Store
@@ -150,6 +149,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+pfp/
 
 # Spyder project settings
 .spyderproject
