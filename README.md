@@ -8,6 +8,8 @@ An audio-to-audio pattern prediction system using Hidden Markov Models (HMM) to 
 This project learns temporal patterns in musical sequences using an HMM trained on sliced spectrograms. 
 Given an audio input, the model generates a continuation that matches the learned pattern.
 
+We have attempted different improvements with HMM. All the previous attempts are documented in file `audio_hmm_improving_attempts.ipynb`. The best attempt is in `audio_hmm_best.ipynb`, and it has the following pipeline:
+
 **Complete Pipeline:**
 ```
 MIDI Files (100, varying BPM)
@@ -20,17 +22,21 @@ Verification & Train/Test Split (60/15)
     ↓
 Spectrogram Extraction and Slicing (slice for each 16th-note by default)
     ↓
-K-Means Quantization (clusters of spectrogram slice)
+Musical Feature Engineering
+    ↓
+K-Means Quantization (clusters of musical features)
     ↓
 HMM Training
     ↓
-Continuation Prediction (K-Means cluster IDs)
+Continuation Prediction (cluster IDs)
     ↓
 Reconstruction from cluster IDs to Spectrogram 
     ↓
 Audio Output
     ↓
-Evaluation with Pitch/Onset extraction
+Convert Audio to MIDI; Compare with GroundTruth
+    ↓
+Evaluation
 ```
 
 # Dev Setup
@@ -49,7 +55,8 @@ You need to move the PPDD datasets under a folder called "datasets" in the root 
 ├── datasets
 │   ├── PPDD-Jul2018_aud_mono_small
 │   ├── PPDD-Jul2018_aud_mono_medium
-├── audio_hmm.ipynb
+├── audio_hmm_best.ipynb
+├── audio_hmm_improving_attempts.ipynb
 ├── requirements.txt
 ├── UprightPianoKW-small-20190703.sf2
 ├── normalized_dataset # this is generated from audio_hmm.ipynb
